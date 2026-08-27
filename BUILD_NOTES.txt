@@ -1,0 +1,21 @@
+NEXA FB PROXY V3
+================
+
+Version: 3.0.0
+
+Supported packages:
+- Facebook: com.facebook.katana
+- Facebook Lite: com.facebook.lite
+- Messenger: com.facebook.orca
+
+Selection model:
+- Checkbox: chọn bất kỳ tổ hợp 1/2/3 app.
+- Only selected installed packages are passed to VpnService.addAllowedApplication().
+- SOCKS5 tunnel + fail-closed Kill Switch.
+
+Build:
+- AGP 9.1.1
+- compileSdk/targetSdk 36
+- minSdk 26
+- Java 17
+- com.wgtunnel:hevtunnel:1.0.4

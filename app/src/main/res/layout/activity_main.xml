@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEXA FB PROXY V3"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTarget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvVpnStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_status"
+            android:padding="16dp"
+            android:text="○ ĐÃ TẮT"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="CHỌN APP ĐI QUA PROXY"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/cbFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Facebook thường" />
+
+        <CheckBox
+            android:id="@+id/cbFacebookLite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Facebook Lite" />
+
+        <CheckBox
+            android:id="@+id/cbMessenger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Messenger" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="SOCKS5"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etHost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Host / IP"
+            android:inputType="textUri"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/etPort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Port"
+            android:inputType="number"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/btnTogglePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HIỆN MẬT KHẨU" />
+
+        <Button
+            android:id="@+id/btnTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="KIỂM TRA PROXY" />
+
+        <TextView
+            android:id="@+id/tvExitIp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="EXIT IP: chưa kiểm tra"
+            android:textIsSelectable="true"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="LƯU CẤU HÌNH" />
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BẬT PROXY CHO APP ĐÃ CHỌN" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="TẮT PROXY" />
+
+        <Button
+            android:id="@+id/btnOpenSelected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MỞ APP ĐÃ CHỌN" />
+
+        <Button
+            android:id="@+id/btnClearCredentials"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XÓA USER / PASS ĐÃ LƯU" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Kill Switch: nếu SOCKS5 mất kết nối, Facebook/Facebook Lite/Messenger đã chọn sẽ bị chặn thay vì tự rơi về IP thật. Các app khác vẫn dùng mạng bình thường."
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</ScrollView>

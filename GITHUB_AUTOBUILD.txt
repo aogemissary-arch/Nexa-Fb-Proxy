@@ -1,0 +1,15 @@
+NEXA FB PROXY V3 - GITHUB AUTO BUILD
+====================================
+
+File .github/workflows/build-apk.yml đã được thêm sẵn.
+
+Khi toàn bộ thư mục này được push lên GitHub:
+1. Mở repo > Actions.
+2. Chọn "Build NEXA FB PROXY APK".
+3. Run workflow (hoặc push lên main/master để tự chạy).
+4. Khi job xanh, tải artifact "NexaFbProxy_V3_APK".
+5. Giải nén artifact -> NexaFbProxy_V3.apk.
+6. Chép/tải APK sang điện thoại và cài.
+
+APK debug phù hợp để cài thử trực tiếp. Android có thể yêu cầu cho phép
+"Install unknown apps" cho trình duyệt hoặc ứng dụng quản lý file.
