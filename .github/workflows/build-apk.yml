@@ -1,1 +1,55 @@
+name: Build Android APK
 
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    env:
+      ANDROID_NDK_HOME: /usr/local/lib/android/sdk/ndk/29.0.14206865
+      ANDROID_NDK_ROOT: /usr/local/lib/android/sdk/ndk/29.0.14206865
+
+    steps:
+      - name: Checkout known-working SOCKS5 app
+        uses: actions/checkout@v4
+        with:
+          repository: heiher/sockstun
+          ref: 12830d4
+          path: appsrc
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Build APK
+        working-directory: appsrc
+        shell: bash
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon assembleDebug
+
+      - name: Find APK
+        shell: bash
+        run: |
+          APK="$(find appsrc -type f -path '*/build/outputs/apk/*' -name '*.apk' | head -n 1)"
+          test -n "$APK"
+          cp "$APK" FacebookProxy.apk
+          ls -lh FacebookProxy.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: FacebookProxy_APK
+          path: FacebookProxy.apk
+          if-no-files-found: error
+          retention-days: 30
